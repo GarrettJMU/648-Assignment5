@@ -1,0 +1,24 @@
+@import "variables";
+@import "mixins";
+
+body {
+  margin: 0;
+  @include backgroundImage($backgroundImage, $white repeat-x);
+  @include fontFamily();
+  @include alterFonts(1em, 2em)
+}
+
+main {
+  width: 920px + 20px;
+  margin: 0 auto;
+  padding: 0 10px;
+  @include largeBreakpoint() {
+    width: 768px;
+  }
+  @include mediumBreakpoint() {
+    width:460px;
+  }
+  @include smallBreakpoint() {
+    width:300px;
+  }
+}

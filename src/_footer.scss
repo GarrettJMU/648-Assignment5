@@ -1,0 +1,64 @@
+@import "variables";
+@import "mixins";
+
+.greybar {
+  width: 100%;
+  height: 90px;
+  background: $lightGray;
+  clear: both;
+  padding-top: 30px;
+  @include smallBreakpoint() {
+    display: none;
+  }
+}
+
+footer {
+  width: 100%;
+  height: 120px;
+  background: $darkBlue;
+  text-align: center;
+  color: $white;
+  padding-top: 50px;
+  @include smallBreakpoint() {
+    text-align: center;
+  }
+  p, img {
+    @include smallBreakpoint() {
+      float: none;
+      margin: 0;
+    }
+  }
+}
+
+.social-media {
+  margin: 0 auto;
+  width: 165px;
+  div {
+    float: left;
+    margin-right: 5px;
+  }
+  a {
+    display: block;
+    width: 36px;
+    height: 36px;
+    text-indent: -9999px;
+  }
+  div.one {
+    @include backgroundImage($socialMediaImage, 0 0);
+  }
+  div.two {
+    @include backgroundImage($socialMediaImage, -38px 0);
+  }
+  div.three {
+    @include backgroundImage($socialMediaImage, -76px 0);
+  }
+  div.four {
+    @include backgroundImage($socialMediaImage, -114px 0);
+  }
+}
+
+select {
+  @include smallBreakpoint() {
+    width: 95%;
+  }
+}

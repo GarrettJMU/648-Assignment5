@@ -1,0 +1,66 @@
+@import "variables";
+@import "mixins";
+
+figure {
+  width: 400px;
+  height: 190px;
+  float: left;
+  display: block;
+  margin: 0;
+  @include backgroundImage($logoImage, no-repeat 0 50px);
+  @include largeBreakpoint() {
+    width: inherit;
+    height: 140px;
+    float: none;
+    background-position: center;
+  }
+  @include smallBreakpoint() {
+    background-size: contain;
+    height: 100px;
+  }
+}
+
+nav {
+  width: 540px;
+  height: 190px;
+  float: left;
+  text-align: right;
+  @include largeBreakpoint() {
+    width: inherit;
+    height: 50px;
+    float: none;
+    text-align: center;
+  }
+  @include smallBreakpoint() {
+    margin-bottom: 40px !important;
+  }
+
+  ul {
+    list-style-type: none;
+    margin-top: 95px;
+    @include largeBreakpoint() {
+      margin-top: 0;
+    }
+    li {
+      display: inline;
+      @include alterFonts(.8em);
+      margin-right: 10px;
+      @include largeBreakpoint() {
+        @include alterFonts(1em);
+        margin: 0 10px;
+      }
+      @include mediumBreakpoint() {
+        @include alterFonts(.8em);
+        margin:0 5px;
+      }
+      a {
+        color: $orange;
+        text-decoration: none;
+        letter-spacing: -0.01em;
+      }
+      a:hover {
+        color: $white;
+      }
+    }
+  }
+}

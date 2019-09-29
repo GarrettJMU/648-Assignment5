@@ -1,0 +1,80 @@
+@import "variables";
+@import "mixins";
+
+#headline {
+  width: 100%;
+  height: 130px;
+  background: $orangeSecondary;
+  text-align: center;
+  margin: 0 auto;
+  h1 {
+    color: $white;
+    @include alterFonts(2.5em, null, 100);
+    padding-top: 50px;
+    @include mediumBreakpoint() {
+      @include alterFonts(2em);
+      padding-top: 50px;
+    }
+    @include smallBreakpoint() {
+      @include alterFonts(1.5em);
+      padding-top: 30px;
+    }
+  }
+}
+
+#content {
+  width: 940px;
+  margin: 20px auto;
+  @include largeBreakpoint() {
+    width: inherit;
+  }
+  h3 {
+    color: $gray;
+    @include alterFonts(2em, null, 400);
+    @include smallBreakpoint() {
+      @include alterFonts(1.6em);
+    }
+  }
+  #products {
+    width: 460px;
+    float: left;
+    img {
+      float: left;
+      margin-right: 20px;
+    }
+    article {
+      margin-bottom: 40px;
+      img {
+        @include smallBreakpoint() {
+          display: none;
+        }
+      }
+    }
+    h4 {
+      line-height: 1em;
+    }
+    @include largeBreakpoint() {
+      width: 46%;
+      margin: 0 2%;
+    }
+    @include mediumBreakpoint() {
+      width: 96%;
+      margin: 0 2%;
+      float: none;
+    }
+  }
+  #testimonials {
+    width: 460px;
+    float: right;
+    @include largeBreakpoint() {
+      width: 46%;
+      margin: 0 2%;
+    }
+    @include mediumBreakpoint() {
+      width: 96%;
+      margin: 0 2%;
+      float: none;
+    }
+  }
+
+}

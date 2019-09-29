@@ -1,0 +1,61 @@
+@import "variables";
+@import "mixins";
+
+header {
+  width: inherit;
+  clear: both;
+  text-align: center;
+  padding-top: 40px;
+  img {
+    max-width: 100%;
+    height: auto;
+    @include mediumBreakpoint() {
+      margin-bottom: 100px;
+    }
+    @include mediumBreakpoint() {
+      margin-bottom: 80px;
+    }
+  }
+  h1 {
+    color: $orange;
+    @include alterFonts(4em, 0, 100);
+    @include largeBreakpoint() {
+      @include alterFonts(3em);
+    }
+    @include mediumBreakpoint() {
+      @include alterFonts(2em);
+    }
+    &:first-child {
+      @include smallBreakpoint() {
+        @include alterFonts(1.4em);
+        margin-bottom: 20px;
+      }
+    }
+  }
+  h2 {
+    color: $white;
+    @include alterFonts(2.5em, 0, 900);
+    margin-bottom: 70px;
+    @include largeBreakpoint() {
+      @include alterFonts(1.5em);
+    }
+    @include mediumBreakpoint() {
+      @include alterFonts(1em);
+    }
+    @include smallBreakpoint() {
+      @include alterFonts(1.4em);
+    }
+  }
+  h3 {
+    color: $gray;
+    @include alterFonts(2em, 0, 400);
+    margin-bottom: 50px;
+    @include mediumBreakpoint() {
+      @include alterFonts(1.5em);
+    }
+    @include smallBreakpoint() {
+      @include alterFonts(1em);
+      color: $white;
+    }
+  }
+}

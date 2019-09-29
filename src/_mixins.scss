@@ -1,0 +1,37 @@
+@import "variables";
+
+@mixin backgroundImage($path, $otherProperties) {
+  background: url($path) $otherProperties;
+}
+
+@mixin fontFamily() {
+  font-family: $roboto, $sanSerif;
+}
+
+@mixin alterFonts($fontSize, $lineHeight: null, $fontWeight: null) {
+  font-size: $fontSize;
+  @if $lineHeight {
+    line-height: $lineHeight;
+  }
+  @if $fontWeight {
+    font-weight: $fontWeight;
+  }
+}
+
+@mixin smallBreakpoint() {
+  @media screen and (max-width: $small) {
+    @content
+  }
+}
+
+@mixin mediumBreakpoint() {
+  @media screen and (max-width: $medium) {
+    @content
+  }
+}
+
+@mixin largeBreakpoint() {
+  @media screen and (max-width: $large) {
+    @content
+  }
+}
